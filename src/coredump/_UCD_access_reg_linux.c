@@ -57,6 +57,11 @@ _UCD_access_reg (unw_addr_space_t as,
 #elif defined(UNW_TARGET_S390X)
   if (regnum > UNW_S390X_R15)
     goto badreg;
+#elif defined(UNW_TARGET_RISCV)
+  if (regnum == UNW_RISCV_PC)
+    regnum = 0;
+  else if (regnum > UNW_RISCV_X31)
+    goto badreg;
 #else
 #if defined(UNW_TARGET_MIPS)
   static const uint8_t remap_regs[] =

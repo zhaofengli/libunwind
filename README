@@ -17,6 +17,7 @@ several architecture/operating-system combinations:
 | Linux   | PARISC       | Works well, but C library missing unwind-info |
 | Linux   | Tilegx       | 64-bit mode only |
 | Linux   | MIPS         | Newly added |
+| Linux   | RISC-V       | 64-bit only |
 | HP-UX   | IA-64        | Mostly works, but known to have serious limitations |
 | FreeBSD | x86-64       | ✓      |
 | FreeBSD | x86          | ✓      |
@@ -34,7 +35,7 @@ such dependencies
  - p, provides its own implementation
  - empty, no requirement
 
-| Archtecture  | getcontext | setcontext |
+| Architecture | getcontext | setcontext |
 |--------------|------------|------------|
 |    aarch64   |     p      |            |
 |    arm       |     p      |            |
@@ -43,6 +44,7 @@ such dependencies
 |    mips      |     p      |            |
 |    ppc32     |     r      |            |
 |    ppc64     |     r      |      r     |
+|    riscv     |     p      |      p     |
 |    s390x     |     p      |      p     |
 |    sh        |     r      |            |
 |    tilegx    |     r      |      r     |
